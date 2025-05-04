@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Sök..." id="searchInput" readonly>
+                <div id="searchChips" class="search-chips"></div>
+            </div>
+        </div>
+        <div class="top-buttons">
+            <button>Populärt</button>
+            <button>Rekommenderat</button>
+            <button>Nya recept</button>
+            <button>Påskrecept</button>
+            <button class="continue">→</button>
+        </div>
+        <div class="categories">
+            <div>
+                <button onclick="toggleCard(0)"><span>Pris</span><span id="icon-0">+</span></button>
+                <div id="card-0" class="choice-card">
+                    <input type="range" id="priceRange" min="0" max="1000" value="500"
+                        oninput="updatePrice(this.value)">
+                    <div class="range-labels">
+                        <span class="price-end">0kr</span>
+                        <span>0kr - 1000kr per portion</span>
+                        <span class="price-end">1000kr</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button onclick="toggleCard(1)"><span>Tema</span><span id="icon-1">+</span></button>
+                <div id="card-1" class="choice-card">Innehåll för Tema</div>
+            </div>
+            <div>
+                <button onclick="toggleCard(2)"><span>Typ av måltid</span><span id="icon-2">+</span></button>
+                <div id="card-2" class="choice-card">Innehåll för Typ av måltid</div>
+            </div>
+            <div>
+                <button onclick="toggleCard(3)"><span>Kost</span><span id="icon-3">+</span></button>
+                <div id="card-3" class="choice-card">Innehåll för Kost</div>
+            </div>
+            <div>
+                <button onclick="toggleCard(4)"><span>Ingredienser</span><span id="icon-4">+</span></button>
+                <div id="card-4" class="choice-card">Innehåll för Ingredienser</div>
+            </div>
+        </div>
+        <div class="bottom-search">
+            <button>Search</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

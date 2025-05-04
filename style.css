@@ -1,0 +1,178 @@
+body {
+    background-color: #F6FEF5;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+}
+
+.top-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    background-color: #A42127;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.continue {
+    margin-left: auto;
+}
+
+.categories>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.categories button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.choice-card {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.choice-card.expanded {
+    max-height: 500px;
+    padding-top: 1rem;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.range-labels .price-end {
+    background-color: #eee;
+    padding: 0.3rem 0.6rem;
+    border-radius: 1rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.bottom-search {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+#search-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.search-tag {
+    background-color: #A42127;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-tag span {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-bar {
+    position: relative;
+}
+
+#searchInput {
+    padding-right: 2.5rem;
+}
+
+#clearPriceBtn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #A42127;
+    cursor: pointer;
+    display: none;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 0.3rem 0.6rem;
+  background-color: white;
+}
+
+#searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+  padding: 0.4rem;
+}
+
+.search-chips {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background-color: #A42127;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.chip span {
+  cursor: pointer;
+  font-weight: bold;
+}
