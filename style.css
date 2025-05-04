@@ -42,10 +42,10 @@ button {
     margin-left: auto;
 }
 
-.categories>div {
+.categories > div {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
 }
 
 .categories button {
@@ -73,15 +73,14 @@ button {
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
+.choice-card > button {
+    margin-bottom: 1rem;
+}
+
 .choice-card.expanded {
     max-height: 500px;
     padding-top: 1rem;
-}
-
-.choice-card.expanded~button,
-button:has(+ .choice-card.expanded) {
-    background-color: #A42127;
-    color: white;
+    margin-bottom: 1.5rem;
 }
 
 .range-labels {
@@ -194,4 +193,14 @@ input[type="range"] {
 .chip span {
     cursor: pointer;
     font-weight: bold;
+}
+
+.meal-type-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.meal-type-buttons button {
+    flex: 1;
 }
