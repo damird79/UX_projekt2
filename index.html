@@ -21,27 +21,59 @@
     <div class="top-buttons">
       <button>Populärt</button>
       <button>Rekommenderat</button>
-      <button>Nyarecept</button>
+      <button>Nya recept</button>
       <button>Påskrecept</button>
       <button class="continue">→</button>
     </div>
 
     <div class="categories">
+
+      <!-- PRIS -->
       <div>
         <button onclick="toggleCard(0)"><span>Pris</span><span id="icon-0">+</span></button>
-        <div id="card-0" class="choice-card">...</div>
+        <div id="card-0" class="choice-card">
+          <input type="range" id="priceRange" min="0" max="1000" value="500" oninput="updatePrice(this.value)">
+          <div class="range-labels">
+            <span class="price-end">0kr</span>
+            <span> - </span>
+            <span class="price-end">1000kr</span>
+            <span>per portion</span>
+          </div>
+        </div>
       </div>
 
+      <!-- TEMA -->
       <div>
         <button onclick="toggleCard(1)"><span>Tema</span><span id="icon-1">+</span></button>
-        <div id="card-1" class="choice-card">...</div>
+        <div id="card-1" class="choice-card">
+          <button onclick="toggleCard(5)"><span>Matkultur</span><span id="icon-5">+</span></button>
+          <div id="card-5" class="choice-card">
+            <button onclick="toggleChip('svenskt')" data-type="svenskt">Svenskt</button>
+            <button onclick="toggleChip('asiatiskt')" data-type="asiatiskt">Asiatiskt</button>
+            <button onclick="toggleChip('mellanöstern')" data-type="mellanöstern">Mellanöstern</button>
+            <button onclick="toggleChip('latinskt')" data-type="latinskt">Latinskt</button>
+            <button onclick="toggleChip('franskt')" data-type="franskt">Franskt</button>
+            <button onclick="toggleChip('italienskt')" data-type="italienskt">Italienskt</button>
+            <button onclick="toggleChip('indiskt')" data-type="indiskt">Indiskt</button>
+          </div>
+          <button onclick="toggleCard(6)"><span>Event & tillfällen</span><span id="icon-6">+</span></button>
+        </div>
       </div>
 
+      <!-- TYP AV MÅLTID -->
       <div>
         <button onclick="toggleCard(2)"><span>Typ av måltid</span><span id="icon-2">+</span></button>
-        <div id="card-2" class="choice-card">...</div>
+        <div id="card-2" class="choice-card">
+          <div class="meal-type-buttons">
+            <button onclick="toggleChip('förrätt')" data-type="förrätt">Förrätt</button>
+            <button onclick="toggleChip('huvudrätt')" data-type="huvudrätt">Huvudrätt</button>
+            <button onclick="toggleChip('dessert')" data-type="dessert">Dessert</button>
+            <button onclick="toggleChip('tilltugg')" data-type="tilltugg">Tilltugg</button>
+          </div>
+        </div>
       </div>
 
+      <!-- KOST -->
       <div>
         <button onclick="toggleCard(3)"><span>Kost</span><span id="icon-3">+</span></button>
         <div id="card-3" class="choice-card">
@@ -92,16 +124,17 @@
         </div>
       </div>
 
+      <!-- INGREDIENSER -->
       <div>
         <button onclick="toggleCard(4)"><span>Ingredienser</span><span id="icon-4">+</span></button>
         <div id="card-4" class="choice-card">Innehåll för Ingredienser</div>
       </div>
-    </div> <!-- ✅ här stängs .categories korrekt -->
+    </div>
 
     <div class="bottom-search">
       <button>Sök</button>
     </div>
-  </div> <!-- container -->
+  </div>
 
   <script src="script.js"></script>
 </body>
