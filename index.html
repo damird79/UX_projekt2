@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catering Interface</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <div class="search-bar">
       <div class="search-input-wrapper">
         <div id="searchChips" class="search-chips"></div>
-        <input type="text" placeholder="Sök..." id="searchInput" readonly>
+        <input type="text" placeholder="Sök..." id="searchInput" readonly />
       </div>
     </div>
 
@@ -32,7 +32,7 @@
       <div>
         <button onclick="toggleCard(0)"><span>Pris</span><span id="icon-0">+</span></button>
         <div id="card-0" class="choice-card">
-          <input type="range" id="priceRange" min="0" max="1000" value="500" oninput="updatePrice(this.value)">
+          <input type="range" id="priceRange" min="0" max="1000" value="500" oninput="updatePrice(this.value)" />
           <div class="range-labels">
             <span class="price-end">0kr</span>
             <span> - </span>
@@ -79,32 +79,22 @@
         <div id="card-3" class="choice-card">
           <button onclick="toggleCard(7)"><span>Preferenser</span><span id="icon-7">+</span></button>
           <div id="card-7" class="choice-card">
-            <div class="meal-type-buttons">
-              <button onclick="toggleChip('veganskt')" data-type="veganskt">
-                <img src="assets/vegan.png" alt="veganskt" class="icon"> Veganskt
-              </button>
-              <button onclick="toggleChip('vegetariskt')" data-type="vegetariskt">
-                <img src="assets/vegetarian.png" alt="vegetariskt" class="icon"> Vegetariskt
-              </button>
-              <button onclick="toggleChip('laktosfritt')" data-type="laktosfritt">
-                <img src="assets/dairy.png" alt="laktosfritt" class="icon"> Laktosfritt
-              </button>
-              <button onclick="toggleChip('mjölkfritt')" data-type="mjölkfritt">
-                <img src="assets/dairy.png" alt="mjölkfritt" class="icon"> Mjölkfritt
-              </button>
-              <button onclick="toggleChip('glutenfritt')" data-type="glutenfritt">
-                <img src="assets/gluten-free.png" alt="glutenfritt" class="icon"> Glutenfritt
-              </button>
+            <div class="meal-type-buttons kost-smal">
+              <button onclick="toggleChip('veganskt')" data-type="veganskt"><img src="assets/vegan.png" alt="veganskt" class="icon" /> Veganskt</button>
+              <button onclick="toggleChip('vegetariskt')" data-type="vegetariskt"><img src="assets/vegetarian.png" alt="vegetariskt" class="icon" /> Vegetariskt</button>
+              <button onclick="toggleChip('laktosfritt')" data-type="laktosfritt"><img src="assets/dairy.png" alt="laktosfritt" class="icon" /> Laktosfritt</button>
+              <button onclick="toggleChip('mjölkfritt')" data-type="mjölkfritt"><img src="assets/dairy.png" alt="mjölkfritt" class="icon" /> Mjölkfritt</button>
+              <button onclick="toggleChip('glutenfritt')" data-type="glutenfritt"><img src="assets/gluten-free.png" alt="glutenfritt" class="icon" /> Glutenfritt</button>
             </div>
             <div class="bottom-options">
-              <label><input type="checkbox" id="customCheckBox"> Går att anpassa efter portioner</label>
-              <label><input type="checkbox" id="allCheckBox"> Exkludera i alla portioner</label>
+              <label><input type="checkbox" id="customCheckBox" /> Går att anpassa efter portioner</label>
+              <label><input type="checkbox" id="allCheckBox" /> Exkludera i alla portioner</label>
             </div>
           </div>
 
           <button onclick="toggleCard(8)"><span>Exkludera</span><span id="icon-8">+</span></button>
           <div id="card-8" class="choice-card">
-            <div class="meal-type-buttons">
+            <div class="meal-type-buttons kost-smal">
               <button onclick="toggleChip('mjölk')" data-type="mjölk">Mjölk</button>
               <button onclick="toggleChip('soja')" data-type="soja">Soja</button>
               <button onclick="toggleChip('ägg')" data-type="ägg">Ägg</button>
@@ -117,8 +107,8 @@
               <button onclick="toggleChip('selleri')" data-type="selleri">Selleri</button>
             </div>
             <div class="bottom-options">
-              <label><input type="checkbox" id="customCheckBox"> Går att anpassa efter portioner</label>
-              <label><input type="checkbox" id="allCheckBox"> Exkludera i alla portioner</label>
+              <label><input type="checkbox" id="customCheckBox" /> Går att anpassa efter portioner</label>
+              <label><input type="checkbox" id="allCheckBox" /> Exkludera i alla portioner</label>
             </div>
           </div>
         </div>
@@ -127,12 +117,43 @@
       <!-- INGREDIENSER -->
       <div>
         <button onclick="toggleCard(4)"><span>Ingredienser</span><span id="icon-4">+</span></button>
-        <div id="card-4" class="choice-card">Innehåll för Ingredienser</div>
+        <div id="card-4" class="choice-card">
+          <div class="ingredient-buttons">
+            <button onclick="toggleSubMenu('fish-options')"><span>Fisk</span><span class="plus">+</span></button>
+            <div class="sub-options" id="fish-options" style="display: none;">
+              <button onclick="toggleChip('salmon')" data-type="salmon">Lax</button>
+              <button onclick="toggleChip('tuna')" data-type="tuna">Tonfisk</button>
+              <button onclick="toggleChip('cod')" data-type="cod">Torsk</button>
+              <button onclick="toggleChip('perch')" data-type="perch">Abborre</button>
+              <button onclick="toggleChip('anchovy')" data-type="anchovy">Anjovis</button>
+              <button onclick="toggleChip('squid')" data-type="squid">Bläckfisk</button>
+              <button onclick="toggleChip('flounder')" data-type="flounder">Flundra</button>
+              <button onclick="toggleChip('pike')" data-type="pike">Gädda</button>
+              <button onclick="toggleChip('pike-perch')" data-type="pike-perch">Gös</button>
+              <button onclick="toggleChip('hoki')" data-type="hoki">Hoki</button>
+            </div>
+            <button onclick="toggleChip('grönsaker')" data-type="grönsaker"><span>Grönsaker</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('kött')" data-type="kött"><span>Kött</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('bär')" data-type="bär"><span>Bär</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('bönor')" data-type="bönor"><span>Bönor</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('frukt')" data-type="frukt"><span>Frukt</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('gryn')" data-type="gryn"><span>Gryn</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('korv')" data-type="korv"><span>Korv</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('linser')" data-type="linser"><span>Linser</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('lök')" data-type="lök"><span>Lök</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('mejeri')" data-type="mejeri"><span>Mejeri</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('mjöl')" data-type="mjöl"><span>Mjöl</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('nudlar')" data-type="nudlar"><span>Nudlar</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('nötter')" data-type="nötter"><span>Nötter</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('ost')" data-type="ost"><span>Ost</span><span class="plus">+</span></button>
+            <button onclick="toggleChip('quorn')" data-type="quorn"><span>Quorn</span><span class="plus">+</span></button>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="bottom-search">
-      <button>Sök</button>
+      <div class="bottom-search">
+        <button>Sök</button>
+      </div>
     </div>
   </div>
 

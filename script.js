@@ -1,3 +1,4 @@
+// Expandera och fäll ihop valkort (t.ex. Pris, Tema, Kost...)
 function toggleCard(index) {
     const card = document.getElementById(`card-${index}`);
     const icon = document.getElementById(`icon-${index}`);
@@ -9,6 +10,7 @@ function toggleCard(index) {
     icon.textContent = isExpanded ? '+' : '−';
 }
 
+// Uppdatera prischip
 function updatePrice(value) {
     removeChip('pris');
 
@@ -20,6 +22,7 @@ function updatePrice(value) {
     document.getElementById('searchChips').appendChild(chip);
 }
 
+// Ta bort ett chip
 function removeChip(type) {
     const chip = document.querySelector(`.chip[data-type="${type}"]`);
     if (chip) chip.remove();
@@ -28,6 +31,7 @@ function removeChip(type) {
     buttons.forEach(btn => btn.classList.remove('active'));
 }
 
+// Lägg till eller ta bort ett chip (används för alla knappar)
 function toggleChip(type) {
     const existing = document.querySelector(`.chip[data-type="${type}"]`);
     const buttons = document.querySelectorAll(`button[data-type="${type}"]`);
@@ -43,4 +47,19 @@ function toggleChip(type) {
         document.getElementById('searchChips').appendChild(chip);
         buttons.forEach(btn => btn.classList.add('active'));
     }
+}
+
+// Visa/dölj undermeny (t.ex. Fisk)
+function toggleSubMenu(id) {
+    const submenu = document.getElementById(id);
+    const button = submenu.previousElementSibling;
+    const isVisible = submenu.style.display === 'flex';
+
+    submenu.style.display = isVisible ? 'none' : 'flex';
+    submenu.style.flexWrap = 'wrap';
+    submenu.style.gap = '0.5rem';
+    submenu.style.marginTop = '0.5rem';
+
+    // Lägg till/ta bort "active"-klassen för att färga knappen röd
+    button.classList.toggle('active', !isVisible);
 }
