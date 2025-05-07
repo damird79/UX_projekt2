@@ -10,7 +10,7 @@ function toggleCard(index) {
     icon.textContent = isExpanded ? '+' : '−';
 }
 
-// Uppdatera prischip
+
 function updatePrice(value) {
     removeChip('pris');
 
@@ -22,7 +22,7 @@ function updatePrice(value) {
     document.getElementById('searchChips').appendChild(chip);
 }
 
-// Ta bort ett chip
+
 function removeChip(type) {
     const chip = document.querySelector(`.chip[data-type="${type}"]`);
     if (chip) chip.remove();
@@ -49,7 +49,7 @@ function toggleChip(type) {
     }
 }
 
-// Visa/dölj undermeny (t.ex. Fisk)
+
 function toggleSubMenu(id) {
     const submenu = document.getElementById(id);
     const button = submenu.previousElementSibling;
