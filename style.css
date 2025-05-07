@@ -10,7 +10,9 @@ body {
 }
 
 .container {
-    width: 50%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -285,4 +287,6 @@ input[type="range"] {
     flex: none;
     text-align: left;
   }
+
+  
   

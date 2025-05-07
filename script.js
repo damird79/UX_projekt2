@@ -63,3 +63,15 @@ function toggleSubMenu(id) {
     // Lägg till/ta bort "active"-klassen för att färga knappen röd
     button.classList.toggle('active', !isVisible);
 }
+
+
+document.getElementById('searchForm').addEventListener('submit', function (e) {
+    const chips = document.querySelectorAll('.chip');
+    const filters = [];
+
+    chips.forEach(chip => {
+        filters.push(chip.getAttribute('data-type'));
+    });
+
+    document.getElementById('filterInput').value = filters.join(',');
+});

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Träfflista för recept</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FDF8F3;
+            font-family: 'Quattrocento Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .btn-back {
+            background-color: #A42127;
+            color: white;
+            padding: 0.7rem 2rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .recipe-card {
+            border: 2px solid #A42127;
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .recipe-card.similar {
+            border-color: #555;
+        }
+
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+        }
+
+        .recipe-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #A42127;
+        }
+
+        .recipe-info {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .recipe-info b {
+            color: #A42127;
+        }
+
+        .card-buttons {
+            display: flex;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+
+        .card-buttons button {
+            border: 1.5px solid #A42127;
+            background: transparent;
+            color: #A42127;
+            padding: 0.4rem 1rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .sort-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #A42127;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class="btn-back">Tillbaka</button>
+
+        <div class="sort-section">
+            <span>Recept (1)</span>
+            <span>Sortera &#8597;</span>
+        </div>
+
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <div class="recipe-title">Kikärtsallad</div>
+                <div>Huvudrätt • 30 min</div>
+            </div>
+            <div class="recipe-info">
+                <div><b>Huvudingrediens:</b> Kikärtor</div>
+                <div><b>Kost:</b> Vegetariskt</div>
+                <div><b>Möjliga variationer:</b> Veganskt, glutenfritt</div>
+            </div>
+            <div class="card-buttons">
+                <button>Visa mer</button>
+                <button>Lägg till i meny</button>
+            </div>
+        </div>
+
+        <h2>Liknande Recept (2)</h2>
+
+        <div class="recipe-card similar">
+            <div class="recipe-header">
+                <div class="recipe-title">Kikärtsallad</div>
+                <div>Huvudrätt • 30 min</div>
+            </div>
+            <div class="recipe-info">
+                <div><b>Huvudingrediens:</b> Kikärtor</div>
+                <div><b>Kost:</b> Vegetariskt</div>
+                <div><b>Möjliga variationer:</b> Veganskt, glutenfritt</div>
+            </div>
+            <div class="card-buttons">
+                <button>Visa mer</button>
+                <button>Lägg till i meny</button>
+            </div>
+        </div>
+
+        <div class="recipe-card similar">
+            <div class="recipe-header">
+                <div class="recipe-title">Kikärtsallad</div>
+                <div>Huvudrätt • 30 min</div>
+            </div>
+            <div class="recipe-info">
+                <div><b>Huvudingrediens:</b> Kikärtor</div>
+                <div><b>Kost:</b> Vegetariskt</div>
+                <div><b>Möjliga variationer:</b> Veganskt, glutenfritt</div>
+            </div>
+            <div class="card-buttons">
+                <button>Visa mer</button>
+                <button>Lägg till i meny</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Hämta query-parametrar
+        const params = new URLSearchParams(window.location.search);
+        const filters = params.get('filter')?.split(',') || [];
+
+        // Exempel: visa filtrering
+        console.log('Sökfilter:', filters);
+
+        const allCards = document.querySelectorAll('.recipe-card');
+        allCards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            const match = filters.every(f => text.includes(f.toLowerCase()));
+            card.style.display = match ? 'block' : 'none';
+        });
+    </script>
+
+
+</body>
+
+</html>
