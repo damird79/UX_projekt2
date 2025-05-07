@@ -95,6 +95,33 @@
             color: #A42127;
             font-weight: bold;
         }
+
+        .recipe-card.highlight .recipe-title,
+        .recipe-card.highlight .recipe-info,
+        .recipe-card.highlight .recipe-info b,
+        .recipe-card.highlight .recipe-header>div:last-child {
+            color: #A42127;
+        }
+
+        .recipe-card.similar {
+            color: #000;
+           
+        }
+
+        .recipe-card.similar .recipe-title,
+        .recipe-card.similar .recipe-info b,
+        .recipe-card.similar .card-buttons button {
+            border-color: #000;
+            color: #000;
+            
+        }
+
+
+        .card-buttons {
+            display: flex;
+            justify-content: flex-end;
+
+        }
     </style>
 </head>
 
@@ -107,7 +134,7 @@
             <span>Sortera &#8597;</span>
         </div>
 
-        <div class="recipe-card">
+        <div class="recipe-card highlight">
             <div class="recipe-header">
                 <div class="recipe-title">Kikärtsallad</div>
                 <div>Huvudrätt • 30 min</div>
