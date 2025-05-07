@@ -289,5 +289,12 @@ input[type="range"] {
     text-align: left;
   }
 
+  #searchForm button {
+    display: flex;
+    justify-content: center;
+    background-color: #A42127;
+    color: #F6FEF5;
+  }
+
   
   
